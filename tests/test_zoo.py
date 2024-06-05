@@ -11,9 +11,15 @@ class TestZoo(TestCase):
         """
 
         zookeeper_1: ZooKeeper = ZooKeeper("Gianni","Rossi",1)
-        fence_1: Fence = Fence(100, 25.0, "Savana")
-        animal_1: Animal("Pluto", "Canide", 5, 300.0, 1.0, "Savana")
+        fence_1: Fence = Fence(100, 25.0, "Savana", [])
+        animal_1: Animal = Animal("Pluto", "Canide", 5, 300.0, 1.0, "Savana")
+        zookeeper_1.add_animal(animal_1, fence_1)
         result: int = len(fence_1.animals)
         message: str = f"Erroer: the function add_animall should not add self.animal_1 into self.fence_1"
 
         self.assertEqual(result, 0, message)
+
+
+if __name__ == "__main__":
+
+    unittest.main()
